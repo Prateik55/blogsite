@@ -17,7 +17,7 @@
     <% }); %>  -->
 
 
-    <%   console.log(posts); %>
+    <!-- <%   console.log(posts); %> -->
 
        
     <% posts.forEach(function (post){ %> 
@@ -26,10 +26,10 @@
         </h1>
         <p>
             <%= post.content.substring(0,100) + "..."; %>
-            <a href="/posts/ + 
-            <%= post.title  %>"
-            > read more</a>
-         </p> 
+            <a href="/posts/<%= post._id %>"> read more</a> 
+         </p>    
+            
+         
 
     <% }); %> 
 
@@ -37,3 +37,7 @@
    
 
 <%- include("Partials/footer") -%>
+
+
+    
+    
