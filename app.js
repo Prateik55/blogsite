@@ -30,11 +30,23 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+// Defining a route for an application using the app.get() method. 
+
+// The route is defined as "/", which is the default route for website and represents the home page. 
+
+// When a user makes a GET request to this route, the code specifies a callback function that will be executed.
+
+// The callback function is using the Post.find() method to retrieve all the posts from a database, and then rendering a "home" page using the res.render() method. 
+
+// The page will be rendered using the homeStartingContent and posts variables as data.
+
 
 
 app.get("/",function(req,res){
-  Post.find({},function (err,posts){
+
+  Post.find({},function (StartingContent,posts){
     res.render("home",{
+
         StartingContent:homeStartingContent,
         posts:posts
     })
